@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/all_subjects', to: 'subjects#all_subjects'
+  resources :subjects, only: [:index, :show]
   resources :profiles do
     resources :subjects, module: :profiles
     resources :locations, module: :profiles

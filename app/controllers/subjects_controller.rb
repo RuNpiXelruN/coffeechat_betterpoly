@@ -1,7 +1,13 @@
 class SubjectsController < ApplicationController
 
-  def all_subjects
-    @all_subjects = Subject.all.order(created_at: :desc)
+  def index
+    @subjects = Subject.all.order(created_at: :desc)
+  end
+
+  def show
+    @subject = Subject.find(params[:id])
+    @user = @subject.user
+    @profile = @user.profile
   end
 
   def create

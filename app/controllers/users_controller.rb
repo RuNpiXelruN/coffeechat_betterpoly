@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.valid?
       sign_in(@user)
       create_user_profile(current_user)
-      redirect_to profile_path(current_user)
+      redirect_to profile_path(current_user.profile)
     else
       render :new
     end

@@ -1,0 +1,3 @@
+<% @subjects.each do |subject| %>
+  <p><%= link_to subject.title, subject_path(subject) %> | Created by <%= link_to subject.user.email, profile_path(subject.user.profile) %>, <%= time_ago_in_words(subject.created_at) + ' ago' %></p>
+<% end %>
