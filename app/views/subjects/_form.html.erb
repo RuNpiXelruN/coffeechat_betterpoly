@@ -1,0 +1,4 @@
+<%= form_for [subjectable, Subject.new] do |f| %>
+  <%= f.text_field :title, placeholder: "Subject title.." %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  locationable: one
+  locationable_type: Locationable
+  suburb: MyString
+
+two:
+  user: two
+  locationable: two
+  locationable_type: Locationable
+  suburb: MyString
