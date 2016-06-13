@@ -1,3 +1,6 @@
 <h1><%= @subject.title %></h1>
 <p>Created by: <%= @subject.user.email %>, <%= time_ago_in_words(@subject.created_at) + ' ago' %></p>
-<hr>
+
+
+<%= render partial: 'comments/comment', locals: {commentable: @subject} %>
+<%= render partial: 'comments/form', locals: {commentable: @subject} %>

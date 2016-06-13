@@ -13,3 +13,6 @@
 <%= render partial: 'subjects/form', locals: {subjectable: @profile} %>
 <%= render partial: 'locations/location', locals: {locationable: @profile} %>
 <%= render partial: 'locations/form', locals: {locationable: @profile} %>
+
+<%= render partial: 'comments/comment', locals: {commentable: @profile} %>
+<%= render partial: 'comments/form', locals: {commentable: @profile} %>

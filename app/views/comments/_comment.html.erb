@@ -1,0 +1,12 @@
+<% commentable.comments.each do |comment| %>
+  <div>
+    <hr>
+    <% if commentable == @subject %>
+      Posted by <%= commentable.user.email %>, <%= time_ago_in_words(comment.created_at) + ' ago' %>
+      <p><%= comment.body %></p>
+    <% else %>
+      <p><<%= comment.title %></p>
+      <p><%= comment.body %> </p>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<%= form_for [commentable, Comment.new] do |f| %>
+  <% if commentable == @subject %>
+    <p><%= f.text_area :body, placeholder: "Say something.." %></p>
+    <%= f.submit %>
+  <% else %>
+    <p><%= f.text_field :title, placeholder: "Enter a title.." %></p>
+    <p><%= f.text_area :body, placeholder: "Start writing!.." %></p>
+    <%= f.submit %>
+  <% end %>
+<% end %>
