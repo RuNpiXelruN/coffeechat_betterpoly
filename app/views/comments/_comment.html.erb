@@ -2,8 +2,13 @@
   <div>
     <hr>
     <% if commentable == @subject %>
-      Posted by <%= commentable.user.email %>, <%= time_ago_in_words(comment.created_at) + ' ago' %>
-      <p><%= comment.body %></p>
+      <p><%= comment.body %>  |  Posted by <%= comment.user.email %>, <%= time_ago_in_words(comment.created_at) + ' ago' %></p>
+
+      <% if comment.user == current_user %>
+        <%= link_to "Edit", edit_comment_path(comment, subject: 'subject') %>
+        <%= link_to "Delete", comment_path(comment), method: :delete %>
+      <% end %>
+
     <% else %>
       <p><<%= comment.title %></p>
       <p><%= comment.body %> </p>

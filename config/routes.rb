@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :locations, only: [:show, :destroy, :edit, :update]
+  resources :comments, only: [:show, :edit, :update, :destroy]
+
   resources :subjects, only: [:index, :show] do
     resources :comments, module: :subjects
   end
@@ -12,5 +14,4 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   root "home#index"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
