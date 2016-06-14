@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613101331) do
+ActiveRecord::Schema.define(version: 20160614070216) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commentable_type"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20160613101331) do
     t.datetime "updated_at",       null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "following_relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["followed_user_id"], name: "index_following_relationships_on_followed_user_id"
+    t.index ["follower_id"], name: "index_following_relationships_on_follower_id"
   end
 
   create_table "locations", force: :cascade do |t|
