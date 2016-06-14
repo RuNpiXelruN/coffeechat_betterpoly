@@ -7,6 +7,7 @@ class LocationsController < ApplicationController
     redirect_to @locationable, notice: "Successfully added location"
   end
 
+
   private
   def location_params
     params.require(:location).permit(:suburb)
