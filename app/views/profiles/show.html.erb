@@ -10,16 +10,18 @@
 </div>
 <hr>
 
-
+<h3>Create a Chat on a Subject or Topic</h3>
 <%= render partial: 'subjects/form', locals: {subjectable: @profile} %>
 <%= render partial: 'subjects/subject', locals: {subjectable: @profile} %>
 
 <hr>
 
+<h3>Show your location so tutee's can pair with you!</h3>
 <%= render partial: 'locations/form', locals: {locationable: @profile} %>
 <%= render partial: 'locations/location', locals: {locationable: @profile} %>
 
 <hr>
 
+<h3>Start a blog!</h3>
 <%= render partial: 'comments/form', locals: {commentable: @profile} %>
 <%= render partial: 'comments/comment', locals: {commentable: @profile} %>
