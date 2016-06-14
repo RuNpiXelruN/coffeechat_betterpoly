@@ -13,7 +13,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-
   private
   def profile_params
     params.require(:profile).permit(:bio, :user_id)

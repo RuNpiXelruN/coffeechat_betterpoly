@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p><%= notice %></p>
+    <% end %>
+
     <%= link_to "Home", root_path %>
     <%= link_to "All Subjects", subjects_path %>
     <% if signed_in? %>

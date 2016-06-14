@@ -1,3 +1,8 @@
 <% locationable.locations.each do |location| %>
   <p><%= location.suburb %></p>
+  <% if current_user.profile.locations.include?(location) %>
+    <%= link_to "Destroy", location, method: :delete %>
+    <%= link_to "Edit", edit_location_path(location) %>
+  <% end %>
+  <%# raise @locationable.inspect #%>
 <% end %>
