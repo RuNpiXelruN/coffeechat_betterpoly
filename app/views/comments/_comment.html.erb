@@ -1,18 +1,17 @@
-<% commentable.comments.each do |comment| %>
-  <div>
+<% if commentable == @subject %>
+  <% commentable.comments.each do |comment| %>
     <hr>
-    <% if commentable == @subject %>
-      <p><%= comment.body %>  |  Posted by <%= link_to comment.user.email, profile_path(comment.user.profile) %>, <%= time_ago_in_words(comment.created_at) + ' ago' %></p>
-
-      <% if comment.user == current_user %>
-        <%= link_to "Edit", edit_comment_path(comment, subject: 'subject'), remote: true %>
-        <%= link_to "Delete", comment_path(comment), method: :delete, remote: true %>
-      <% end %>
-
-    <% else %>
-      <h3>My Blog</h3>
-      <p><%= comment.title %></p>
-      <p><%= comment.body %> </p>
+    <p><%= comment.body %>  |  Posted by <%= link_to comment.user.email, profile_path(comment.user.profile) %>, <%= time_ago_in_words(comment.created_at) + ' ago' %></p>
+    <% if comment.user == current_user %>
+      <%= link_to "Edit", edit_comment_path(comment, subject: 'subject') %>
+      <%= link_to "Delete", comment_path(comment), method: :delete, remote: true %>
     <% end %>
-  </div>
+  <% end %>
+<% else %>
+  <h3>My Blog</h3>
+  <% commentable.comments.each do |comment| %>
+    <p><%= comment.title %></p>
+    <p><%= comment.body %> </p>
+    <hr>
+  <% end %>
 <% end %>

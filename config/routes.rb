@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show] do
-    post 'follow', to: 'following_relationships#create'
+      post 'follow', to: 'following_relationships#create'
+    delete 'follow', to: 'following_relationships#destroy'
   end
   root "home#index"
 

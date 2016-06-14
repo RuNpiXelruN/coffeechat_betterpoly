@@ -14,4 +14,7 @@ class User < ActiveRecord::Base
     class_name: 'FollowingRelationship'
   has_many :followers, through: :follower_relationships
 
+  def following?(user)
+    followed_user_ids.include?(user.id)
+  end
 end

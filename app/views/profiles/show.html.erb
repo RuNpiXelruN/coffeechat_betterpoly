@@ -1,8 +1,10 @@
 <div>
   <p>Hi <%= @user.email %></p>
 
-  <%= follow_button(@user) %>
-  
+  <% unless @user == current_user %>
+    <%= follow_button(@user) %>
+  <% end %>
+
   <% if @profile.bio %>
     <hr>
     <p><%= @profile.bio %></p>

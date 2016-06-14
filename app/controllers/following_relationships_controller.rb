@@ -5,4 +5,10 @@ class FollowingRelationshipsController < ApplicationController
     current_user.followed_users << user
     redirect_to user.profile
   end
+
+  def destroy
+    user = User.find(params[:user_id])
+    current_user.followed_users.delete(user)
+    redirect_to user.profile
+  end
 end
