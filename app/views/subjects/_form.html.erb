@@ -1,4 +1,4 @@
-<%= form_for [subjectable, Subject.new] do |f| %>
-  <%= f.text_field :title, placeholder: "Subject title.." %>
-  <%= f.submit %>
+<%= form_for [subjectable, Subject.new], remote: true do |f| %>
+  <%= f.text_field :title, placeholder: "Enter new chat.." %>
+  <%= f.submit "Create Chat" %>
 <% end %>
